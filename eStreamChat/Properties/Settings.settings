@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="eStreamChat.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EnableFileTransfer" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SendFileAllowedExtensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">jpg,png,gif,mp3,zip,rar,txt</Value>
+    </Setting>
+    <Setting Name="ProvidersPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Providers\Custom</Value>
+    </Setting>
+    <Setting Name="EnableVideoChat" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FlashMediaServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">rtmp://</Value>
+    </Setting>
+    <Setting Name="FlashServerType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">fms</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

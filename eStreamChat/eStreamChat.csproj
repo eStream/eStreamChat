@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9C688B3-684E-4B32-A3D1-907411FFC7BA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eStreamChat</RootNamespace>
+    <AssemblyName>eStreamChat</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Blue\alert.png" />
+    <Content Include="App_Themes\Blue\aside-btm-bgr.png" />
+    <Content Include="App_Themes\Blue\aside-top-bgr.png" />
+    <Content Include="App_Themes\Blue\body_bgr.png" />
+    <Content Include="App_Themes\Blue\btn_bgr.png" />
+    <Content Include="App_Themes\Blue\btn_bgr_hover.png" />
+    <Content Include="App_Themes\Blue\half-bgr.png" />
+    <Content Include="App_Themes\Blue\jquery-ui.css" />
+    <Content Include="App_Themes\Blue\layout.js" />
+    <Content Include="App_Themes\Blue\poweredby.png" />
+    <Content Include="App_Themes\Blue\sendfile.png" />
+    <Content Include="App_Themes\Blue\shadow.png" />
+    <Content Include="App_Themes\Blue\templates.html" />
+    <Content Include="App_Themes\Blue\text_bold.png" />
+    <Content Include="App_Themes\Blue\text_italic.png" />
+    <Content Include="App_Themes\Blue\text_underline.png" />
+    <Content Include="App_Themes\Blue\ui-anim_basic_16x16.gif" />
+    <Content Include="App_Themes\Blue\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="App_Themes\Blue\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="App_Themes\Blue\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="App_Themes\Blue\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="App_Themes\Blue\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="App_Themes\Blue\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="App_Themes\Blue\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="App_Themes\Blue\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="App_Themes\Blue\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="App_Themes\Blue\ui-icons_222222_256x240.png" />
+    <Content Include="App_Themes\Blue\ui-icons_228ef1_256x240.png" />
+    <Content Include="App_Themes\Blue\ui-icons_ef8c08_256x240.png" />
+    <Content Include="App_Themes\Blue\ui-icons_ffd27a_256x240.png" />
+    <Content Include="App_Themes\Blue\ui-icons_ffffff_256x240.png" />
+    <EmbeddedResource Include="broadcast_fms.swf" />
+    <EmbeddedResource Include="broadcast_red5.swf" />
+    <Content Include="ChatEngine.svc" />
+    <Content Include="ChatRoom.aspx" />
+    <EmbeddedResource Include="DetectWebcam.swf" />
+    <Content Include="Emoticons\angel.gif" />
+    <Content Include="Emoticons\arrow.gif" />
+    <Content Include="Emoticons\badgrin.gif" />
+    <Content Include="Emoticons\biggrin.gif" />
+    <Content Include="Emoticons\boohoo.gif" />
+    <Content Include="Emoticons\clap.gif" />
+    <Content Include="Emoticons\confused.gif" />
+    <Content Include="Emoticons\cool.gif" />
+    <Content Include="Emoticons\cry.gif" />
+    <Content Include="Emoticons\dance.gif" />
+    <Content Include="Emoticons\doh.gif" />
+    <Content Include="Emoticons\doubt.gif" />
+    <Content Include="Emoticons\drool.gif" />
+    <Content Include="Emoticons\eh.gif" />
+    <Content Include="Emoticons\evil.gif" />
+    <Content Include="Emoticons\exclaim.gif" />
+    <Content Include="Emoticons\hand.gif" />
+    <Content Include="Emoticons\idea.gif" />
+    <Content Include="Emoticons\liar.gif" />
+    <Content Include="Emoticons\lol.gif" />
+    <Content Include="Emoticons\mad.gif" />
+    <Content Include="Emoticons\naughty.gif" />
+    <Content Include="Emoticons\neutral.gif" />
+    <Content Include="Emoticons\pray.gif" />
+    <Content Include="Emoticons\question.gif" />
+    <Content Include="Emoticons\razz.gif" />
+    <Content Include="Emoticons\redface.gif" />
+    <Content Include="Emoticons\rolleyes.gif" />
+    <Content Include="Emoticons\sad.gif" />
+    <Content Include="Emoticons\shhh.gif" />
+    <Content Include="Emoticons\shifty.gif" />
+    <Content Include="Emoticons\shock.gif" />
+    <Content Include="Emoticons\sick.gif" />
+    <Content Include="Emoticons\silenced.gif" />
+    <Content Include="Emoticons\smile.gif" />
+    <Content Include="Emoticons\snooty.gif" />
+    <Content Include="Emoticons\surprised.gif" />
+    <Content Include="Emoticons\think.gif" />
+    <Content Include="Emoticons\wall.gif" />
+    <Content Include="Emoticons\whistle.gif" />
+    <Content Include="Emoticons\wink.gif" />
+    <Content Include="MessengerWindow.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="PrivateMessage.wav" />
+    <Content Include="PublicMessage.wav" />
+    <EmbeddedResource Include="receive_fms.swf" />
+    <EmbeddedResource Include="receive_red5.swf" />
+    <Content Include="Scripts\jquery.ajaxfileupload.js" />
+    <Content Include="Scripts\eStreamChat.js" />
+    <Content Include="Scripts\jquery.blink.js" />
+    <Content Include="Scripts\jquery.colorPicker.js" />
+    <Content Include="Scripts\jquery.contextMenu.mod.js" />
+    <Content Include="Scripts\jquery.emoticon.js" />
+    <Content Include="Scripts\jquery.jqote2.js" />
+    <Content Include="Styles\arrow.gif" />
+    <Content Include="Styles\ContextMenuImages\ban.png" />
+    <Content Include="Styles\ContextMenuImages\chat.png" />
+    <Content Include="Styles\ContextMenuImages\door.png" />
+    <Content Include="Styles\ContextMenuImages\fish.png" />
+    <Content Include="Styles\ContextMenuImages\ignore.png" />
+    <Content Include="Styles\ContextMenuImages\kick.png" />
+    <Content Include="Styles\ContextMenuImages\profile.png" />
+    <Content Include="Styles\jquery.contextMenu.css" />
+    <Content Include="Styles\logo.png" />
+    <Content Include="Styles\Style.css" />
+    <Content Include="Styles\videobroadcast.png" />
+    <Content Include="Styles\webcam.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChatEngine.svc.cs">
+      <DependentUpon>ChatEngine.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ChatRoom.aspx.cs">
+      <DependentUpon>ChatRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChatRoom.aspx.designer.cs">
+      <DependentUpon>ChatRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ChatSettings.cs" />
+    <Compile Include="Classes\Logger.cs" />
+    <Compile Include="Classes\MemoryChatRoomStorage.cs" />
+    <Compile Include="Classes\MemoryCacheProvider.cs" />
+    <Compile Include="Classes\MemoryMessengerPresenceProvider.cs" />
+    <Compile Include="Classes\Miscellaneous.cs" />
+    <Compile Include="Classes\RemoteAuthUserProvider.cs" />
+    <Compile Include="Classes\Timers.cs" />
+    <Compile Include="FlashResource.ashx.cs">
+      <DependentUpon>FlashResource.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MessengerCommand.ashx.cs">
+      <DependentUpon>MessengerCommand.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SendFile.ashx.cs">
+      <DependentUpon>SendFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Thumbnail.ashx.cs">
+      <DependentUpon>Thumbnail.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Providers\" />
+    <Folder Include="UserFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eStreamChat.Interfaces\eStreamChat.Interfaces.csproj">
+      <Project>{1CC1BDD6-C0CF-4D68-A37F-09C7EA866F48}</Project>
+      <Name>eStreamChat.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eStreamChat.SampleProviders\eStreamChat.SampleProviders.csproj">
+      <Project>{873690D8-A080-46CE-B77F-58CAB590A09A}</Project>
+      <Name>eStreamChat.SampleProviders</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FlashResource.ashx" />
+    <Content Include="MessengerCommand.ashx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="SendFile.ashx" />
+    <Content Include="Thumbnail.ashx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63416</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/AspNetAjaxChat2</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
