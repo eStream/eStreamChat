@@ -403,6 +403,9 @@ function broadcastVideo(enable) {
             var webcamIcon = $('#webcam' + userId);
             webcamIcon.unbind('click');
             webcamIcon.hide();
+
+            if (onlineUsers[userId] != undefined)
+                delete onlineUsers[userId].Guid;
         }
 
         currentVideoBroadcastGuid = null;
