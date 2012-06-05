@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Specialized;
 using System.Configuration;
+using System.Globalization;
 using System.Security;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -49,7 +50,12 @@ namespace eStreamChat.Classes
                 #region Validate timestamp
                 try
                 {
-                    DateTime authDate = DateTime.FromFileTimeUtc(Convert.ToInt64(hrefParams["timestamp"]));
+                    DateTime authDate;
+                    if (!DateTime.TryParseExact(hrefParams["timestamp"], "yyMMddhhmmss", CultureInfo.InvariantCulture,
+                        DateTimeStyles.None, out authDate))
+                    {
+                        authDate = DateTime.FromFileTimeUtc(Convert.ToInt64(hrefParams["timestamp"]));
+                    }
                     if (DateTime.Now.Subtract(authDate) > TimeSpan.FromHours(24))
                     {
                         throw new SecurityException("Timestamp has expired!");
