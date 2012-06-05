@@ -195,17 +195,6 @@ namespace eStreamChat
                     messengerProvider.AddChatRequest(request);
                 }
                 catch (System.Security.SecurityException) { }
-
-                /* 
-                chatRoomStorage.AddMessage(room.Id, new Message
-                {
-                    Content = String.Empty,
-                    FromUserId = user.Id,
-                    ToUserId = targetUserId,
-                    MessageType = MessageTypeEnum.ChatRequest,
-                    Timestamp = Miscellaneous.GetTimestamp()
-                });
-                 */
             }
             #endregion
 
