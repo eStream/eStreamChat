@@ -1,0 +1,82 @@
+﻿    <script type="text/x-jqote-template" id="systemMessageTemplate">
+        <![CDATA[
+        <div><*= this.Message *></div>
+        ]]>
+    </script>
+    <script type="text/x-jqote-template" id="userMessageTemplate">
+        <![CDATA[
+        <div><img src="<*= this.ThumbnailUrl *>" /><b><*= this.DisplayName *></b>: 
+            <span style="<*= this.FormatOptions *>"><*= this.Message *></span></div>
+        ]]>
+    </script>
+    <script type="text/x-jqote-template" id="onlineUserTemplate">
+        <![CDATA[
+	    <a href="#" class="user_thumb"><img src="<*= this.ThumbnailUrl *>" /></a>
+        <a href="#" class="context-menu-target" data-userId="<*= this.Id *>" onclick="privateChat('<*= this.Id *>'); return false;"><*= this.DisplayName *></a>
+        <a id="webcam<*= this.Id *>" href="#" <*= (this.Guid != undefined && userId != this.Id ? 'onclick="receiveVideo(\'' + this.Id + '\', \'' + this.Guid + '\');"' : '') *> style="display:<*= (this.Guid != undefined ? 'inline' : 'none') *>"><img src="Styles/webcam.png"></a><br />
+        ]]>
+    </script>
+    <script type="text/x-jqote-template" id="fileSentTemplate">
+        <![CDATA[
+        <div class="msgwrap file">
+            <div class="user_id1">Your file has been sent successfully!</div>
+        </div>
+        ]]>
+    </script>
+    <script type="text/x-jqote-template" id="incomingFileTemplate">
+        <![CDATA[
+        <div class="msgwrap file">
+            <div class="user_id1">Incoming file from <*= this.DisplayName *></div>
+            <div class="user_msg">[&nbsp;<a href="<*= this.FileUrl *>" target="_blank">Download</a>&nbsp;]</div>
+        </div>
+        ]]>
+    </script>
+    <script type="text/x-jqote-template" id="incomingImageTemplate">
+        <![CDATA[
+        <div class="msgwrap file">
+            <div class="user_id1">Incoming image from <*= this.DisplayName *></div>
+            <div class="img_wrap"><img src="Thumbnail.ashx?img=<*= this.FileUrl *>" onload="this.style.height = this.height" style="height: 200px"></div>
+            <div class="user_msg">[&nbsp;<a href="<*= this.FileUrl *>" target="_blank">Download full image</a>&nbsp;]</div>
+        </div>
+        ]]>
+    </script>
+    <script type="text/x-jqote-template" id="incomingVideoTemplate">
+        <![CDATA[
+        <div class="msgwrap file">
+            <div class="user_id1">Incoming video broadcast from <*= this.DisplayName *> <input type="button" value="Accept" onclick="receiveVideo('<*= this.SenderUserId *>', '<*= this.Guid *>'); this.style.display = 'none';"></div>
+        </div>
+        ]]>
+    </script>
+    <script type="text/x-jqote-template" id="webcamDetectorTemplate">
+        <![CDATA[
+        <object id="webcamdetect" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1" height="1">
+            <param name="movie" value="FlashResource.ashx?resname=DetectWebcam">
+            <param name="quality" value="high">
+            <embed name="webcamdetect" src="FlashResource.ashx?resname=DetectWebcam" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1" height="1"></embed>
+        </object>
+        ]]>
+    </script>
+    <script type="text/x-jqote-template" id="broadcastVideoWindowTemplate">
+        <![CDATA[
+        <div id="divBroadcastVideo" title="Broadcast Video">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="100%" height="100%">
+                <param name="movie" value="FlashResource.ashx?resname=broadcast&br_width=<*= this.BroadcastVideoWidth *>&br_height=<*= this.BroadcastVideoHeight *>&br_guid=<*= this.Guid *>&br_mode=audiovideo&br_add=<*= this.FlashMediaServer *>">
+                <param name="quality" value="high">
+                <param name="wmode" value="transparent">
+                <embed wmode="transparent" src="FlashResource.ashx?resname=broadcast&br_width=<*= this.BroadcastVideoWidth *>&br_height=<*= this.BroadcastVideoHeight *>&br_guid=<*= this.Guid *>&br_mode=audiovideo&br_add=<*= this.FlashMediaServer *>" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="100%" height="100%"></embed>
+            </object>            
+        </div>
+        ]]>
+    </script>
+    <script type="text/x-jqote-template" id="receiveVideoWindowTemplate">
+        <![CDATA[
+        <div id="divReceiveVideo<*= this.SenderUserId *>" title="Receiving Video">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="100%" height="100%">
+                <param name="movie" value="FlashResource.ashx?resname=receive&br_guid=<*= this.Guid *>&br_mode=audiovideo&br_add=<*= this.FlashMediaServer *>">
+                <param name="quality" value="high">
+                <param name="wmode" value="transparent">
+                <embed wmode="transparent" src="FlashResource.ashx?resname=receive&br_guid=<*= this.Guid *>&br_mode=audiovideo&br_add=<*= this.FlashMediaServer *>" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="100%" height="100%"></embed>
+            </object>
+        </div>
+        ]]>
+    </script>

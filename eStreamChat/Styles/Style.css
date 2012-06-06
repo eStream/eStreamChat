@@ -18,14 +18,6 @@ div.color_picker
 	background-position:bottom right;
     cursor: pointer;
 }
-div#color_selector
-{
-    width: 110px;
-    position: absolute;
-    border: 1px solid #598FEF;
-    background-color: #EFEFEF;
-    padding: 2px;
-}
 div.color_swatch
 {
     height: 12px;
@@ -37,9 +29,3 @@ div.color_swatch
     line-height: 12px;
 }
 .clear{ clear:both}
-
-
-/*---------------------------------------------------------------------- MESSENGER ----------------------------------------------------------------------*/
-.video_first					{ }
-.video_first,
-.video_second					{ background:#DEE6E0; background-repeat:no-repeat;background-size: 100%; height:50%;}
