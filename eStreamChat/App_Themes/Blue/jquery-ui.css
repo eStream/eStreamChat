@@ -515,7 +515,7 @@ background:#DEE6E0 ;border-radius:6px 6px 0 0; }
 						/*box-shadow:2px -5px 8px #111*/}				
 .aside-header			{ text-align:center; line-height:30px; font-size:14px; padding:0px 0 0 0px; color:#02364F}
 .aside-content			{ padding:10px; overflow:auto; overflow-x:hidden; height:96% }
-#aside img				{ border:1px solid #ddd; vertical-align:middle; clear:left }
+#aside img				{ vertical-align:middle; clear:left }
 #aside a				{ display:inline-block; font-size:12px !important; line-height:40px; padding:0 5px 0 0; color:#408BAF; text-decoration:none; }
 #aside a:hover			{ text-decoration:underline }
 #aside a.alt			{ }
@@ -576,3 +576,17 @@ div.color_picker		{outline:0; height:24px; margin:0; display:inline-block; verti
 #fileUploadDialog		{ text-align:center}
 .poweredby				{ width:110px; height:40px; background:url(poweredby.png) no-repeat bottom right; display:inline-block; 
 						position:absolute; bottom:7px; right:0px;}
+
+div#color_selector
+{
+    width: 110px;
+    position: absolute;
+    background-color: #EFEFEF;
+    padding: 5px;
+	border-radius:4px;
+	box-shadow:0 0 5px #111
+}
+
+/*---------------------------------------------------------------------- MESSENGER ----------------------------------------------------------------------*/
+.video_first,
+.video_second					{ background:#DEE6E0; background-repeat:no-repeat;background-size: 100%; height:50%;}

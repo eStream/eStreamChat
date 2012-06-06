@@ -11,7 +11,7 @@
     </script>
     <script type="text/x-jqote-template" id="onlineUserTemplate">
         <![CDATA[
-	    <a href="#"><img src="<*= this.ThumbnailUrl *>" /></a>
+	    <a href="#" class="user_thumb"><img src="<*= this.ThumbnailUrl *>" /></a>
         <a href="#" class="context-menu-target" data-userId="<*= this.Id *>" onclick="privateChat('<*= this.Id *>'); return false;"><*= this.DisplayName *></a>
         <a id="webcam<*= this.Id *>" href="#" <*= (this.Guid != undefined && userId != this.Id ? 'onclick="receiveVideo(\'' + this.Id + '\', \'' + this.Guid + '\');"' : '') *> style="display:<*= (this.Guid != undefined ? 'inline' : 'none') *>"><img src="Styles/webcam.png"></a><br />
         ]]>
