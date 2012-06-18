@@ -86,6 +86,10 @@ namespace eStreamChat.Classes
                     hrefParams["thumbUrl"] ??
                     (string.Format("http://www.gravatar.com/avatar/{0}.jpg?s=30&d=monsterid",
                                    FormsAuthentication.HashPasswordForStoringInConfigFile(user.Id, "md5")).ToLower());
+                user.PhotoUrl =
+                    hrefParams["photoUrl"] ??
+                    (string.Format("http://www.gravatar.com/avatar/{0}.jpg?s=256&d=monsterid",
+                                   FormsAuthentication.HashPasswordForStoringInConfigFile(user.Id, "md5")).ToLower());
                 cacheProvider.Set("RemoteAuthUserProvider_" + user.Id, user);
                 return user;
             }
