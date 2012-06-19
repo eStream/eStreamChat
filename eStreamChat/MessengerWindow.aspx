@@ -81,6 +81,7 @@
                 <span class="text-icons"><input type="checkbox" id="checkAlert" /><label for="checkAlert" class="alert"></label>
                 </span>
                 <span id="videoBroadcastButtonContainer" style="display:none"><input type="button" class="broadcast_video" id="checkVideoBroadcast" title="Broadcast video" /></span>
+                <!-- Powered by label can be removed with commercial license -->
                 <a class="poweredby" href="http://www.estreamchat.com" target="_blank"></a>                
             </div>
             <div class="send_msg">

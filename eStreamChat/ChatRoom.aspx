@@ -94,7 +94,8 @@
                 <span class="text-icons"><input type="checkbox" id="checkAlert" /><label for="checkAlert" class="alert"></label>
                 </span>
                 <span id="videoBroadcastButtonContainer" class="options_btn" ><input type="button" class="broadcast_video" id="checkVideoBroadcast" title="Broadcast video" /></span>
-                <a class="poweredby" href="http://www.estreamchat.com" target="_blank"></a> 
+                <!-- Powered by label can be removed with commercial license -->
+                <a class="poweredby" href="http://www.estreamchat.com" target="_blank"></a>
             </div>
             <div class="send_msg">
                 <input id="messageInput" type="text" />
