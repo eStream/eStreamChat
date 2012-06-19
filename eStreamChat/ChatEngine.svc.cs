@@ -276,12 +276,6 @@ namespace eStreamChat
             var leftUsers = leaveMessages.Where(l => !joinMessages.Any(j => j.FromUserId == l.FromUserId && j.Timestamp > l.Timestamp)).Select(
                                 m => chatUserProvider.GetUser(m.FromUserId)).ToArray();
 
-            //var joinedUsers = result.Messages.Where(m => m.MessageType == MessageTypeEnum.UserJoined).Select(
-            //    m => chatUserProvider.GetUser(m.FromUserId)).ToArray();
-
-            //var leftUsers = result.Messages.Where(m => m.MessageType == MessageTypeEnum.UserLeft || m.MessageType == MessageTypeEnum.Kicked).Select(
-            //    m => chatUserProvider.GetUser(m.FromUserId)).ToArray();
-
             result.UsersJoined = joinedUsers;
             result.UsersLeft = leftUsers;
 
