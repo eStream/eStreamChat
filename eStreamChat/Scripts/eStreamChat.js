@@ -25,7 +25,7 @@ var broadcastVideoWindowHeight = 240;
 var receiveVideoWindowWidth = 320;
 var receiveVideoWindowHeight = 240;
 
-$(function() {
+$(function () {
     if (typeof $('body').data('messengermode') == 'boolean')
         messengerMode = $('body').data('messengermode');
 
@@ -35,7 +35,7 @@ $(function() {
     }
 
     var templateUrl = $('#templates').data('url');
-    $('#templates').load(templateUrl, function() {
+    $('#templates').load(templateUrl, function () {
         // Set css class based on the browser
         if ($.browser.msie) {
             $("body").addClass('msie');
@@ -45,7 +45,7 @@ $(function() {
         if ($.browser.mozilla) $("body").addClass('mozilla');
 
         if ($.browser.msie && parseInt($.browser.version, 10) < 9) {
-            $("label img").live("click", function() {
+            $("label img").live("click", function () {
                 $("#" + $(this).parents("label").attr("for")).focus();
                 $("#" + $(this).parents("label").attr("for")).click();
             });
@@ -54,11 +54,11 @@ $(function() {
         // Initialize color picker
         $('#textColor').colorPicker();
 
-        $('#checkAlert').click(function() {
+        $('#checkAlert').click(function () {
             alertEnabled = $('#checkAlert').is(':checked');
         });
 
-        $('#checkVideoBroadcast').click(function() {
+        $('#checkVideoBroadcast').click(function () {
             var alreadyOpened;
             if (messengerMode)
                 alreadyOpened = !$('#divCurrentUserVideo').is(':empty');
@@ -67,16 +67,16 @@ $(function() {
             broadcastVideo(!alreadyOpened);
         });
 
-        $('#fileUploadDialogButton').bind('click', function() {
+        $('#fileUploadDialogButton').bind('click', function () {
             $('#fileUploadDialog').dialog(
                 {
-                    close: function(ev, ui) {
+                    close: function (ev, ui) {
                         focusMessageField();
                     }
                 });
         });
 
-        $("#fileUploadDialog #uploadButton").bind('click', function() {
+        $("#fileUploadDialog #uploadButton").bind('click', function () {
             var toUserId = getTargetUserId();
             var sendFileURL = 'SendFile.ashx?token=' + token + "&chatRoomId=" + chatRoomId;
             if (toUserId != null)
@@ -88,9 +88,9 @@ $(function() {
                     secureuri: false,
                     fileElementId: 'fileUpload',
                     dataType: 'json',
-                    success: function(data, status) {
+                    success: function (data, status) {
                         $('#fileUploadDialog').dialog('close');
-                        if (typeof(data.error) != 'undefined') {
+                        if (typeof (data.error) != 'undefined') {
                             if (data.error != '') {
                                 alert(data.error);
                             } else {
@@ -99,7 +99,7 @@ $(function() {
                             }
                         }
                     },
-                    error: function(data, status, e) {
+                    error: function (data, status, e) {
                         alert(e);
                     }
                 }
@@ -112,25 +112,24 @@ $(function() {
         // Initialize jquery ui tabs & buttons
         $("#tabs").tabs({
             tabTemplate: '<li><a href="#{href}">#{label}</a> <span class="ui-icon ui-icon-close" style="cursor:pointer">Close Tab</span></li>',
-            add: function(event, ui) {
+            add: function (event, ui) {
                 $('#' + ui.panel.id).addClass('messages');
                 updateLayout();
 
                 $(ui.tab).next('.ui-icon-close').attr('id', "close-" + ui.panel.id);
-                $('#close-' + ui.panel.id).bind('click', function() {
+                $('#close-' + ui.panel.id).bind('click', function () {
                     var index = $('li', $("#tabs")).index($(this).parent());
                     $(this).parent().hide();
                     $("#tabs").tabs('remove', index);
                 });
             },
-            select: function(event, ui) {
+            select: function (event, ui) {
                 activePanel = $('#' + ui.panel.id);
                 activePanel.parent().stopBlink();
             },
-            show: function(event, ui) {
+            show: function (event, ui) {
                 activePanel = $('#' + ui.panel.id);
-                //scroll to the bottom
-                activePanel.attr({ scrollTop: activePanel.attr("scrollHeight") });
+                scrollToBottom();
                 focusMessageField();
             }
         });
@@ -154,27 +153,27 @@ $(function() {
         $('#checkVideoBroadcast').button();
 
         //gives focus back to the message input field when a button is clicked
-        $("#button-panel input, .color_picker_wrap, #color_selector, #button-panel select>option").each(function() { $(this).click(function() { focusMessageField(); }); });
-        $("#button-panel select").each(function() {
-            $(this).blur(function() { focusMessageField(); });
-            $(this).change(function() { focusMessageField(); });
+        $("#button-panel input, .color_picker_wrap, #color_selector, #button-panel select>option").each(function () { $(this).click(function () { focusMessageField(); }); });
+        $("#button-panel select").each(function () {
+            $(this).blur(function () { focusMessageField(); });
+            $(this).change(function () { focusMessageField(); });
         });
-        $('#button-panel select>option').each(function() { $(this).mousedown(function() { focusMessageField(); }); });
+        $('#button-panel select>option').each(function () { $(this).mousedown(function () { focusMessageField(); }); });
 
         // Update the layout
         updateLayout();
-        $(window).resize(function() {
+        $(window).resize(function () {
             updateLayout();
         });
 
         // Attach the send button handlers
-        $("#sendButton").click(function() {
+        $("#sendButton").click(function () {
             sendMessage();
             return false;
         });
 
         // Catch the enter button on the new message textbox
-        $("#messageInput").keypress(function(event) {
+        $("#messageInput").keypress(function (event) {
             if (event.keyCode == 13) {
                 event.preventDefault();
                 sendMessage();
@@ -193,7 +192,7 @@ $(function() {
 
         // Configure alert popup for errors
         $.ajaxSetup({
-            error: function(req, status, error) {
+            error: function (req, status, error) {
                 alert(status + ' - ' + req.responseText);
             }
         });
@@ -202,10 +201,10 @@ $(function() {
         $.ajax({
             type: "POST",
             url: "ChatEngine.svc/JoinChatRoom",
-            data: '{"chatRoomId":"' + chatRoomId + '", "href":"' + window.location.href.replace( /'/g , "\'").replace( /\\/g , "\\\\") + '"}',
+            data: '{"chatRoomId":"' + chatRoomId + '", "href":"' + window.location.href.replace(/'/g, "\'").replace(/\\/g, "\\\\") + '"}',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            success: function(msg) {
+            success: function (msg) {
                 joinChatRoomSuccess(msg.d);
             }
         });
@@ -691,8 +690,7 @@ function outputSystemMessage(message, showInCurrentTab) {
         $('#systemMessageTemplate').jqote({ Message: message })
     );
 
-    //scroll to bottom
-    activePanel.attr({ scrollTop: activePanel.attr("scrollHeight") });
+    scrollToBottom();
 }
 
 function isPrivateMessage(message) {
@@ -769,8 +767,11 @@ function outputUserMessage(message) {
         }
     }
 
-    //scroll to bottom
-    activePanel.attr({ scrollTop: activePanel.attr("scrollHeight") });
+    scrollToBottom();
+}
+
+function scrollToBottom() {
+    activePanel.scrollTop(activePanel.prop("scrollHeight"));
 }
 
 function OnWebcamClick(event) {
