@@ -461,7 +461,7 @@ function closeVideoReceiver(senderUserId) {
 
 function updateOnlineUsers() {
     if (messengerMode) {
-        if (onlineUsers[userId] != undefined)
+        if (onlineUsers[userId] != undefined && onlineUsers[userId].Guid == undefined)
             $('#divCurrentUserVideo').css("background-image", "url(" + onlineUsers[userId].PhotoUrl + ")");
         if (onlineUsers[messengerTargetUserId] != undefined)
             $('#divTargetUserVideo').css("background-image", "url(" + onlineUsers[messengerTargetUserId].PhotoUrl + ")");
