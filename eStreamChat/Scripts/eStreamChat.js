@@ -746,10 +746,10 @@ function outputUserMessage(message) {
     
         //if generic file or image file
     else if (message.MessageType == 6 || message.MessageType == 7) {
-        var templateID = message.MessageType == 6 ? "#incomingFileTemplate" : "#incomingImageTemplate";
+        var templateId = message.MessageType == 6 ? "#incomingFileTemplate" : "#incomingImageTemplate";
 
         if (userId != message.FromUserId) {
-            messagePanel.append($(templateID).jqote({ FileUrl: /*$.URLEncode(*/message.Content/*)*/, DisplayName: user.DisplayName }));
+            messagePanel.append($(templateId).jqote({ FileUrl: /*$.URLEncode(*/message.Content/*)*/, DisplayName: user.DisplayName }));
         }
     } else if (message.MessageType == 9) {
         if (userId != message.FromUserId) {
@@ -809,7 +809,7 @@ function sendMessage() {
         FormatOptions: { Bold: isBold, Italic: isItalic, Underline: isUnderline, Color: color, FontName: fontName, FontSize: fontSize }
     });
 
-    var ajaxData = '{"chatRoomId":"' + chatRoomId + '", "token":"' + token + '", "message":"' + message.replace( /'/g , "\'").replace( /\\/g , "\\\\") + '"';
+    var ajaxData = '{"chatRoomId":"' + chatRoomId + '", "token":"' + token + '", "message":"' + message.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
     if (toUserId != null) ajaxData += ', "toUserId":"' + toUserId + '"';
     if (isBold) ajaxData += ', "bold":true';
     if (isItalic) ajaxData += ', "italic":true';
