@@ -10,7 +10,7 @@
         $(".messages").css('height', $(window).height() - $("#header").outerHeight() - $("#footer").outerHeight() - $("#tabs ul").outerHeight() - 14);
         $(".messages").css('width', $("#container").width() - aside.width() - 20);
         $("#messageInput").css('width', $("#footer").outerWidth() - $("#sendButton").outerWidth() - 50);
-        $("#aside_messenger").css('height', $("#tabs:visible").outerHeight() - 0);
+		$("#aside_messenger").css('height', Math.max($("#tabs:visible").outerHeight() - 0, 280));
     }
     else {
         $(".content").css('width', $("#container").width());
