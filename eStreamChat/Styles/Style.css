@@ -28,6 +28,6 @@ div.color_swatch
     cursor: pointer;
     line-height: 12px;
 }
-.content{ overflow:auto}
+.messenger .content{ overflow:auto}
 .clear{ clear:both}
 #aside_messenger	{ min-width:220px !important;overflow:hidden}
