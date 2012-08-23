@@ -10,7 +10,7 @@
 <body data-messengermode="true">
     <div class="messenger">
         <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
-        <script src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="http://code.jquery.com/ui/1.8.23/jquery-ui.min.js" type="text/javascript"></script>
         <script src="Scripts/jquery.jqote2.js" type="text/javascript"></script>
         <script src="Scripts/jquery.blink.js" type="text/javascript"></script>
         <script src="Scripts/jquery.colorPicker.js" type="text/javascript"></script>
