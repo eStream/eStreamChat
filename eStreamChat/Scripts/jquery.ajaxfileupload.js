@@ -4,7 +4,10 @@ jQuery.extend({
         var frameId = 'jUploadFrame' + id;
 
         if (window.ActiveXObject) {
-            var io = document.createElement('<iframe id="' + frameId + '" name="' + frameId + '" />');
+            //var io = document.createElement('<iframe id="' + frameId + '" name="' + frameId + '" />');
+            var io = document.createElement("iframe");
+            io.setAttribute("id", frameId);
+            io.setAttribute("name", frameId);
             if (typeof uri == 'boolean') {
                 io.src = 'javascript:false';
             }
