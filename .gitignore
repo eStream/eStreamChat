@@ -1,0 +1,13 @@
+*.user
+*.suo
+*.pubxml
+*.dll
+*.pdb
+
+*/obj
+*/bin
+
+eStreamChat/bin
+
+/packages
+!packages/repositories.config

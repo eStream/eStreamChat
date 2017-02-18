@@ -1,18 +1,20 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStreamChat", "eStreamChat\eStreamChat.csproj", "{B9C688B3-684E-4B32-A3D1-907411FFC7BA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStreamChat.Interfaces", "eStreamChat.Interfaces\eStreamChat.Interfaces.csproj", "{1CC1BDD6-C0CF-4D68-A37F-09C7EA866F48}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStreamChat.SampleProviders", "eStreamChat.SampleProviders\eStreamChat.SampleProviders.csproj", "{873690D8-A080-46CE-B77F-58CAB590A09A}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4EB14646-3DD3-491F-BCAF-D7DFB78B2024}"
 	ProjectSection(SolutionItems) = preProject
 		COPYING = COPYING
 		LICENSE = LICENSE
 		README = README
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStreamChat", "eStreamChat\eStreamChat.csproj", "{B9C688B3-684E-4B32-A3D1-907411FFC7BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStreamChat.Interfaces", "eStreamChat.Interfaces\eStreamChat.Interfaces.csproj", "{1CC1BDD6-C0CF-4D68-A37F-09C7EA866F48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStreamChat.SampleProviders", "eStreamChat.SampleProviders\eStreamChat.SampleProviders.csproj", "{873690D8-A080-46CE-B77F-58CAB590A09A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
